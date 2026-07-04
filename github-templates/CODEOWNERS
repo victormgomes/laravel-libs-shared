@@ -1,9 +1,3 @@
-# ----------------------------------------------------
-# 🔐 GOVERNANÇA VMGTEC
-# Os arquivos abaixo são gerenciados pelo Repositório Central.
-# Ninguém na biblioteca filha pode aprová-los sem um Admin.
-# ----------------------------------------------------
-
 # GitHub Actions & Configs
 /.github/workflows/ci.yml         @victormgomes
 /.github/dependabot.yml           @victormgomes
