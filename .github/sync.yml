@@ -1,0 +1,69 @@
+group:
+  - repos:
+      - victormgomes/laravel-query-engine
+    files:
+      # Community Health
+      - source: community/CODE_OF_CONDUCT.md
+        dest: .github/CODE_OF_CONDUCT.md
+      - source: community/CONTRIBUTING.md
+        dest: .github/CONTRIBUTING.md
+      - source: community/SECURITY.md
+        dest: .github/SECURITY.md
+      - source: community/SUPPORT.md
+        dest: .github/SUPPORT.md
+      - source: community/FUNDING.yml
+        dest: .github/FUNDING.yml
+      - source: community/LICENSE.md
+        dest: LICENSE.md
+      
+      # GitHub Templates
+      - source: github-templates/CODEOWNERS
+        dest: .github/CODEOWNERS
+      - source: github-templates/PULL_REQUEST_TEMPLATE.md
+        dest: .github/PULL_REQUEST_TEMPLATE.md
+      - source: github-templates/dependabot.yml
+        dest: .github/dependabot.yml
+      - source: github-templates/ISSUE_TEMPLATE/
+        dest: .github/ISSUE_TEMPLATE/
+      
+      # GitHub Actions Workflows
+      - source: workflows/ci.yml
+        dest: .github/workflows/ci.yml
+      
+      # Configs & Tooling
+      - source: configs/.editorconfig
+        dest: .editorconfig
+      - source: configs/.gitattributes
+        dest: .gitattributes
+      - source: configs/.gitignore
+        dest: .gitignore
+      - source: configs/.markdownlint-cli2.jsonc
+        dest: .markdownlint-cli2.jsonc
+      - source: configs/.prettierrc
+        dest: .prettierrc
+      - source: configs/.prettierrc.json
+        dest: .prettierrc.json
+      - source: configs/.prettierignore
+        dest: .prettierignore
+      - source: configs/.releaserc.json
+        dest: .releaserc.json
+      - source: configs/captainhook.json
+        dest: captainhook.json
+      - source: configs/composer-require-checker.json
+        dest: composer-require-checker.json
+      - source: configs/infection.json.dist
+        dest: infection.json.dist
+      - source: configs/phpinsights.php
+        dest: phpinsights.php
+      - source: configs/phpstan.neon.dist
+        dest: phpstan.neon.dist
+      - source: configs/phpunit.xml.dist
+        dest: phpunit.xml.dist
+      - source: configs/rector.php
+        dest: rector.php
+      - source: configs/Dockerfile
+        dest: Dockerfile
+      - source: configs/docker-compose.yml
+        dest: docker-compose.yml
+      - source: configs/.actrc
+        dest: .actrc

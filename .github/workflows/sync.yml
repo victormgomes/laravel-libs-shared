@@ -1,0 +1,28 @@
+name: Sync Master Files
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode?'
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run GitHub File Sync
+        uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.SYNC_TOKEN }}
+          PR_BRANCH_PREFIX: "chore/sync-master-files"
+          PR_TITLE: "chore: update shared repository files"
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' || env.ACT == 'true' }}

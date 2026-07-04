@@ -1,0 +1,13 @@
+name: Validate Shared Configs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: victormgomes/laravel-libs-shared/.github/workflows/infra-lint.yml@main
