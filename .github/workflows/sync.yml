@@ -23,6 +23,7 @@ jobs:
         uses: BetaHuhn/repo-file-sync-action@v1
         with:
           GH_PAT: ${{ secrets.SYNC_TOKEN }}
-          PR_BRANCH_PREFIX: "chore/sync-master-files"
-          PR_TITLE: "chore: update shared repository files"
+          BRANCH_PREFIX: "chore/sync-master-files"
+          COMMIT_PREFIX: "chore: update shared repository files"
+          COMMIT_AS_PR_TITLE: "true"
           DRY_RUN: ${{ github.event.inputs.dry_run == 'true' || env.ACT == 'true' }}
