@@ -31,11 +31,12 @@ jobs:
                 
                 for file in $CHANGED_FILES; do
                   for locked in $LOCKED_FILES; do
-                    # shellcheck disable=SC2053
-                    if [[ "$file" == $locked ]]; then
-                      echo "::error file=$file::❌ ERROR: This file ($file) can only be modified in the central repository: victormgomes/laravel-libs-shared"
-                      exit 1
-                    fi
+                    case "$file" in
+                      $locked)
+                        echo "::error file=$file::❌ ERROR: This file ($file) can only be modified in the central repository: victormgomes/laravel-libs-shared"
+                        exit 1
+                        ;;
+                    esac
                   done
                 done
     code-quality:
