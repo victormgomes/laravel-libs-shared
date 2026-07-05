@@ -31,12 +31,15 @@ jobs:
                 
                 for file in $CHANGED_FILES; do
                   for locked in $LOCKED_FILES; do
-                    case "$file" in
-                      $locked)
-                        echo "::error file=$file::❌ ERROR: This file ($file) can only be modified in the central repository: victormgomes/laravel-libs-shared"
-                        exit 1
-                        ;;
-                    esac
+                    regex="^${locked//./\\.}$"
+                    regex="${regex//\\*/.*}"
+                    if [[ "$locked" == */ ]]; then
+                      regex="^${locked//./\\.}.*"
+                    fi
+                    if [[ "$file" =~ $regex ]]; then
+                      echo "::error file=$file::❌ ERROR: This file ($file) can only be modified in the central repository: victormgomes/laravel-libs-shared"
+                      exit 1
+                    fi
                   done
                 done
     code-quality:
