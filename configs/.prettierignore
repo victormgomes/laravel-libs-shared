@@ -3,4 +3,3 @@ node_modules/
 coverage/
 docs/CHANGELOG.md
 .agents/
-package-lock.json

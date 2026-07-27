@@ -71,5 +71,3 @@ group:
         dest: .actrc
       - source: configs/package.json
         dest: package.json
-      - source: configs/package-lock.json
-        dest: package-lock.json
