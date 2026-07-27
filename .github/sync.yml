@@ -29,6 +29,8 @@ group:
       # GitHub Actions Workflows
       - source: workflows/ci.yml
         dest: .github/workflows/ci.yml
+      - source: workflows/docs.yml
+        dest: .github/workflows/docs.yml
       
       # Configs & Tooling
       - source: configs/.editorconfig
@@ -67,3 +69,7 @@ group:
         dest: docker-compose.yml
       - source: configs/.actrc
         dest: .actrc
+      - source: configs/package.json
+        dest: package.json
+      - source: configs/package-lock.json
+        dest: package-lock.json

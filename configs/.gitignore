@@ -26,6 +26,10 @@ _ide_helper_models.php
 /.fleet
 /.vscode
 
+# VitePress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
 # Misc
 phpunit.xml
 phpstan.neon
