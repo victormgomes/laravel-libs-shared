@@ -31,6 +31,8 @@ group:
         dest: .github/workflows/ci.yml
       - source: workflows/docs.yml
         dest: .github/workflows/docs.yml
+      - source: workflows/auto-approve.yml
+        dest: .github/workflows/auto-approve.yml
       
       # Configs & Tooling
       - source: configs/.editorconfig
