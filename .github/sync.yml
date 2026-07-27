@@ -33,6 +33,14 @@ group:
         dest: .github/workflows/docs.yml
       - source: workflows/auto-approve.yml
         dest: .github/workflows/auto-approve.yml
+      - source: workflows/branch-cleanup.yml
+        dest: .github/workflows/branch-cleanup.yml
+      
+      # AI Guidelines
+      - source: agents/AGENTS.md
+        dest: .agents/AGENTS.md
+      - source: agents/skills/development_workflow/SKILL.md
+        dest: .agents/skills/development_workflow/SKILL.md
       
       # Configs & Tooling
       - source: configs/.editorconfig
