@@ -45,6 +45,7 @@ jobs:
           AGE_DAYS: ${{ inputs.age_days }}
           MAX_DELETIONS: ${{ inputs.max_deletions }}
         run: |
+          # shellcheck disable=SC2129
           echo "## Branch Cleanup Report" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
 
