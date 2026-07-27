@@ -11,7 +11,7 @@ updates:
           - "dependencies"
 
     - package-ecosystem: "npm"
-      directory: "/"
+      directory: "/configs"
       schedule:
           interval: "weekly"
       labels:
