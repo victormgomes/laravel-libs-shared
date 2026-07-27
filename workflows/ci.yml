@@ -25,7 +25,6 @@ jobs:
                 fetch-depth: 0
             - name: Check for locked file modifications
               run: |
-                # shellcheck disable=SC2254
                 # Lê os arquivos bloqueados dinamicamente do CODEOWNERS
                 LOCKED_FILES=$(awk '!/^#/ && !/^$/ {print $1}' .github/CODEOWNERS | sed 's|^/||')
                 CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
@@ -40,6 +39,7 @@ jobs:
                           "$dir" | "$dir"/*) match=true ;;
                         esac ;;
                       *\*)
+                        # shellcheck disable=SC2254
                         case "$file" in
                           $locked) match=true ;;
                         esac ;;
