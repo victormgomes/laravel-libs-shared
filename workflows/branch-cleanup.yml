@@ -45,9 +45,10 @@ jobs:
           AGE_DAYS: ${{ inputs.age_days }}
           MAX_DELETIONS: ${{ inputs.max_deletions }}
         run: |
-          # shellcheck disable=SC2129
-          echo "## Branch Cleanup Report" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "## Branch Cleanup Report"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
 
           # Fetch all branches with last commit date
           gh api "repos/$REPO/branches?per_page=100" --jq '.[] | "\(.name)\t\(.commit.sha)"' > /tmp/branches.txt
@@ -69,8 +70,10 @@ jobs:
           ISSUED=0
           SKIPPED=0
 
-          echo "| Branch | Status | Reason | Last Commit | Author |" >> "$GITHUB_STEP_SUMMARY"
-          echo "|--------|--------|--------|-------------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "| Branch | Status | Reason | Last Commit | Author |"
+            echo "|--------|--------|--------|-------------|--------|"
+          } >> "$GITHUB_STEP_SUMMARY"
 
           while IFS=$'\t' read -r BRANCH SHA; do
             # Skip default branch
@@ -141,7 +144,9 @@ jobs:
 
           done < /tmp/branches.txt
 
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "**Summary:** $DELETED deleted, $ISSUED issues created, $SKIPPED skipped" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Config: age_days=$AGE_DAYS, max_deletions=$MAX_DELETIONS" >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo ""
+            echo "**Summary:** $DELETED deleted, $ISSUED issues created, $SKIPPED skipped"
+            echo ""
+            echo "Config: age_days=$AGE_DAYS, max_deletions=$MAX_DELETIONS"
+          } >> "$GITHUB_STEP_SUMMARY"
