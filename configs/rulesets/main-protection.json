@@ -43,9 +43,6 @@
           { "context": "style-check / php-code-styling" }
         ]
       }
-    },
-    {
-      "type": "required_conversation_resolution"
     }
   ],
   "bypass_actors": [

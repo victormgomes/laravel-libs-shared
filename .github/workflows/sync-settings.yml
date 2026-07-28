@@ -36,14 +36,12 @@ jobs:
           REPOS="victormgomes/laravel-query-engine victormgomes/async-api"
           for repo in $REPOS; do
             echo "Configuring GitHub Pages for $repo..."
-            # Check if Pages is already enabled
             if gh api "repos/$repo/pages" --silent 2>/dev/null; then
               echo "  Pages already enabled on $repo, skipping."
             else
-              # Enable Pages with workflow build type
               gh api -X POST "repos/$repo/pages" \
-                -f build_type='workflow' \
-                -F source='{"branch":"main","path":"/docs"}' 2>/dev/null && \
+                --header "Accept: application/vnd.github+json" \
+                --input - <<< '{"build_type":"workflow","source":{"branch":"main","path":"/docs"}}' 2>&1 && \
                 echo "  Pages enabled on $repo." || \
                 echo "  Warning: Could not enable Pages on $repo."
             fi
