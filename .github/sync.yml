@@ -1,6 +1,7 @@
 group:
   - repos:
       - victormgomes/laravel-query-engine
+      - victormgomes/async-api
     files:
       # Community Health
       - source: community/CODE_OF_CONDUCT.md

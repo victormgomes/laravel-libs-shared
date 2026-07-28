@@ -1,5 +1,6 @@
 repos:
   - repo: victormgomes/laravel-query-engine
+  - repo: victormgomes/async-api
 
 settings:
   delete_branch_on_merge: true
