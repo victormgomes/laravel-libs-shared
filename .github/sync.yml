@@ -62,16 +62,8 @@ group:
         dest: .releaserc.json
       - source: configs/captainhook.json
         dest: captainhook.json
-      - source: configs/composer-require-checker.json
-        dest: composer-require-checker.json
-      - source: configs/infection.json.dist
-        dest: infection.json.dist
       - source: configs/phpinsights.php
         dest: phpinsights.php
-      - source: configs/phpstan.neon.dist
-        dest: phpstan.neon.dist
-      - source: configs/phpunit.xml.dist
-        dest: phpunit.xml.dist
       - source: configs/rector.php
         dest: rector.php
       - source: configs/Dockerfile
