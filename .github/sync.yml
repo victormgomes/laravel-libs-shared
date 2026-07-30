@@ -60,12 +60,6 @@ group:
         dest: .prettierignore
       - source: configs/.releaserc.json
         dest: .releaserc.json
-      - source: configs/captainhook.json
-        dest: captainhook.json
-      - source: configs/phpinsights.php
-        dest: phpinsights.php
-      - source: configs/rector.php
-        dest: rector.php
       - source: configs/Dockerfile
         dest: Dockerfile
       - source: configs/docker-compose.yml
@@ -74,3 +68,26 @@ group:
         dest: .actrc
       - source: configs/package.json
         dest: package.json
+
+      # Template Files (sync only if missing — downstream may customize)
+      - source: configs/captainhook.json
+        dest: captainhook.json
+        replace: false
+      - source: configs/composer-require-checker.json
+        dest: composer-require-checker.json
+        replace: false
+      - source: configs/infection.json.dist
+        dest: infection.json.dist
+        replace: false
+      - source: configs/phpinsights.php
+        dest: phpinsights.php
+        replace: false
+      - source: configs/phpstan.neon.dist
+        dest: phpstan.neon.dist
+        replace: false
+      - source: configs/phpunit.xml.dist
+        dest: phpunit.xml.dist
+        replace: false
+      - source: configs/rector.php
+        dest: rector.php
+        replace: false
